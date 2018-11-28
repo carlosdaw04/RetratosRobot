@@ -11,26 +11,26 @@ public class Main {
 		{"barbilla", "\\_______/", "\\,,,,,,,/"}
 	};
 	
-	static String getOpcion(int rasgo) {
-		int opcion;
-		for (int i=1; i<rasgos[rasgo].length; i++)
-			System.out.println(i + " - " + rasgos[rasgo][i]);
+	static String obtenerRasgo(int faccion) {
+		int rasgo;
+		for (int i=1; i<rasgos[faccion].length; i++)
+			System.out.println(i + " - " + rasgos[faccion][i]);
 		do {
-			System.out.println("Elige la opción para " + rasgos[rasgo][0] + " (1-" + (rasgos[rasgo].length - 1) + "):");
-			opcion = in.nextInt();
-			if (opcion < 1 || opcion > rasgos[rasgo].length)
+			System.out.println("Elige la opción para " + rasgos[faccion][0] + " (1-" + (rasgos[faccion].length - 1) + "):");
+			rasgo = in.nextInt();
+			if (rasgo < 1 || rasgo > rasgos[faccion].length)
 				System.out.println("La opción elegida no es correcta. Vuelve a introducirla");
-		} while (opcion < 1 || opcion > rasgos[rasgo].length);
-		return rasgos[rasgo][opcion];
+		} while (rasgo < 1 || rasgo > rasgos[faccion].length);
+		return rasgos[faccion][rasgo];
 	}
 	
 	public static void main(String[] args) {
 		
 		String [] retrato = new String[5];
-		for (int i=0; i<retrato.length; i++)
-			retrato[i] = getOpcion(i);
-		for (int i=0; i<retrato.length; i++)
-			System.out.println(retrato[i]);
+		for (int faccion=0; faccion<retrato.length; faccion++)
+			retrato[faccion] = obtenerRasgo(faccion);
+		for (int faccion=0; faccion<retrato.length; faccion++)
+			System.out.println(retrato[faccion]);
 	}
 	
 }
