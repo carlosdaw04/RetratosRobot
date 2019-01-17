@@ -50,8 +50,48 @@ public class RetratoRobot {
 				facciones[4];
 	}
 	
-	public void setRasgo(int faccion, int rasgo) {
-		facciones[faccion] = rasgos[faccion][rasgo];
+//	public void setRasgo(int faccion, int rasgo) {
+//		facciones[faccion] = rasgos[faccion][rasgo];
+//	}
+	
+	public void setPelo(int rasgo) {
+		facciones[0] = rasgos[0][rasgo];
+	}
+	
+	public void setOjos(int rasgo) {
+		facciones[1] = rasgos[1][rasgo];
+	}
+	
+	public void setNariz(int rasgo) {
+		facciones[2] = rasgos[2][rasgo];
+	}
+	
+	public void setBoca(int rasgo) {
+		facciones[3] = rasgos[3][rasgo];
+	}
+	
+	public void setBarbilla(int rasgo) {
+		facciones[4] = rasgos[4][rasgo];
+	}
+	
+	public String getPelo() {
+		return facciones[0];
+	}
+	
+	public String getOjos() {
+		return facciones[1];
+	}
+	
+	public String getNariz() {
+		return facciones[2];
+	}
+	
+	public String getBoca() {
+		return facciones[3];
+	}
+	
+	public String getBarbilla() {
+		return facciones[4];
 	}
 	
 	public static String [] getRasgos(int faccion) {

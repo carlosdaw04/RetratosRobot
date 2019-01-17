@@ -14,7 +14,10 @@ public class Main {
 //		int barbilla = elegirRasgo(RetratoRobot.getRasgos(4));
 //		RetratoRobot retrato = new RetratoRobot(pelo, ojos, nariz, boca, barbilla);
 //		System.out.println(retrato);
-		System.out.println(new RetratoRobot());
+		RetratoRobot retrato = new RetratoRobot();
+		System.out.println(retrato);
+		retrato.setPelo(375);
+		System.out.println(retrato);
 	}
 	
 	public static int elegirRasgo(String [] rasgos) {
