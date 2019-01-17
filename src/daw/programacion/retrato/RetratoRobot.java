@@ -15,19 +15,17 @@ public class RetratoRobot {
 			{"barbilla", "\\_______/", "\\,,,,,,,/"}
 	};
 	
-	private String pelo;
-	private String ojos;
-	private String nariz;
-	private String boca;
-	private String barbilla;
+	private String [] facciones = new String[5];
+	
+	
 	private Color color;
 	
 	public RetratoRobot() {
-		pelo = rasgos[0][r.nextInt(rasgos[0].length - 1) + 1];
-		ojos = rasgos[1][r.nextInt(rasgos[1].length - 1) + 1];
-		nariz = rasgos[2][r.nextInt(rasgos[2].length - 1) + 1];
-		boca = rasgos[3][r.nextInt(rasgos[3].length - 1) + 1];
-		barbilla = rasgos[4][r.nextInt(rasgos[4].length - 1) + 1];
+		facciones[0] = rasgos[0][r.nextInt(rasgos[0].length - 1) + 1];
+		facciones[1] = rasgos[1][r.nextInt(rasgos[1].length - 1) + 1];
+		facciones[2] = rasgos[2][r.nextInt(rasgos[2].length - 1) + 1];
+		facciones[3] = rasgos[3][r.nextInt(rasgos[3].length - 1) + 1];
+		facciones[4] = rasgos[4][r.nextInt(rasgos[4].length - 1) + 1];
 	}
 	
 	public RetratoRobot(int pelo, int ojos, int nariz, int boca, int barbilla) {
@@ -35,21 +33,25 @@ public class RetratoRobot {
 	}
 
 	public RetratoRobot(int pelo, int ojos, int nariz, int boca, int barbilla, Color color) {
-		this.pelo = rasgos[0][pelo];
-		this.ojos = rasgos[1][ojos];
-		this.nariz = rasgos[2][nariz];
-		this.boca = rasgos[3][boca];
-		this.barbilla = rasgos[4][barbilla];
+		facciones[0] = rasgos[0][pelo];
+		facciones[1] = rasgos[1][ojos];
+		facciones[2] = rasgos[2][nariz];
+		facciones[3] = rasgos[3][boca];
+		facciones[4] = rasgos[4][barbilla];
 		this.color = color;
 	}
 	 
 	@Override
 	public String toString() {
-		return pelo + System.getProperty("line.separator") +
-				ojos + System.getProperty("line.separator") +
-				nariz + System.getProperty("line.separator") +
-				boca + System.getProperty("line.separator") +
-				barbilla;
+		return facciones[0] + System.getProperty("line.separator") +
+				facciones[1] + System.getProperty("line.separator") +
+				facciones[2] + System.getProperty("line.separator") +
+				facciones[3] + System.getProperty("line.separator") +
+				facciones[4];
+	}
+	
+	public void setRasgo(int faccion, int rasgo) {
+		facciones[faccion] = rasgos[faccion][rasgo];
 	}
 	
 	public static String [] getRasgos(int faccion) {
